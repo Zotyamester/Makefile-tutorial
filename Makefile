@@ -1,4 +1,4 @@
-.PHONY = all clean
+.PHONY = all run clean
 
 CC = gcc
 
@@ -8,6 +8,9 @@ SRCS := main.c
 BINS := $(SRCS:%.c=%)
 
 all: ${BINS}
+
+run:
+	./main
 
 %: %.o
 	${CC} ${LINKERFLAG} $< -o $@
